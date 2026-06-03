@@ -35,19 +35,19 @@ export function Navbar() {
         <a href="#top" className="flex items-center gap-3 leading-none">
           <div className="flex flex-col">
             <span
-              className="text-xl sm:text-2xl tracking-tight"
+              className="text-xl sm:text-2xl tracking-tight transition-colors duration-300"
               style={{
                 fontFamily: '"Times New Roman MT", "Times New Roman", Times, serif',
-                color: '#fdec71',
+                color: scrolled ? '#1C3A4A' : '#fdec71',
               }}
             >
               PathwayItalia
             </span>
             <span
-              className="tracking-normal text-right -mt-0.5 text-xs"
+              className="tracking-normal text-right -mt-0.5 text-xs transition-colors duration-300"
               style={{
                 fontFamily: '"League Spartan", sans-serif',
-                color: '#ffffff',
+                color: scrolled ? '#1C3A4A' : '#ffffff',
                 fontSize: '8px',
                 fontWeight: 600,
               }}
@@ -55,7 +55,7 @@ export function Navbar() {
               led by Sohaib Jehanzeb.
             </span>
           </div>
-          <span className="hidden md:inline-block pl-3 ml-1 border-l border-ocean/20 text-[10px] uppercase tracking-[0.28em] text-gold/90">
+          <span className={`hidden md:inline-block pl-3 ml-1 border-l text-[10px] uppercase tracking-[0.28em] transition-colors duration-300 ${scrolled ? 'border-ocean/20 text-ocean' : 'border-white/20 text-gold/90'}`}>
             Italy, Simplified.
           </span>
         </a>
