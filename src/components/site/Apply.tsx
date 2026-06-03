@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export function Apply() {
-  const [submitted, setSubmitted] = useState(false);
   return (
     <section id="apply" className="relative py-28 lg:py-40 bg-gradient-to-br from-ivory via-[#F8E9C8] to-gold/40 overflow-hidden">
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-blush/30 blur-3xl" />
