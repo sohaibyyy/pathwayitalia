@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/pathway-italia-wordmark.png";
 
 
 
