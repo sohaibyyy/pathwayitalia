@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/pathway-italia-logo.png.asset.json";
+import logo from "@/assets/pathway-italia-wordmark.png";
 
 
 
@@ -33,17 +33,12 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 leading-none">
           <img
-            src={logo.url}
+            src={logo}
             alt="PathwayItalia — led by Sohaib Jehanzeb"
-            className="h-12 w-12 rounded-full object-cover ring-1 ring-gold/40 shadow-sm"
+            className="h-10 sm:h-12 w-auto"
           />
-          <span className="hidden sm:flex flex-col">
-            <span className="font-display text-xl text-ocean leading-none">
-              PathwayItalia
-            </span>
-            <span className="mt-1 text-[10px] uppercase tracking-[0.28em] text-gold/90">
-              Italy, Simplified.
-            </span>
+          <span className="hidden md:inline-block pl-3 ml-1 border-l border-ocean/20 text-[10px] uppercase tracking-[0.28em] text-gold/90">
+            Italy, Simplified.
           </span>
         </a>
 
