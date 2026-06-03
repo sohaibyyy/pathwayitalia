@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="border-t border-ivory/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 text-xs text-ivory/50 flex flex-col sm:flex-row gap-2 justify-between">
-          <span>© 2025 PathwayItalia. Led by Sohaib Jehanzeb.</span>
+          <span>© 2025 PathwayItalia</span>
           <span>Made with warmth in the Mediterranean.</span>
         </div>
       </div>
