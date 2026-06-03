@@ -42,10 +42,12 @@ export function Navbar() {
               PathwayItalia
             </span>
             <span
-              className="text-[10px] tracking-[0.2em] uppercase text-right"
+              className="tracking-normal text-right -mt-0.5"
               style={{
                 fontFamily: '"League Spartan", sans-serif',
                 color: '#ffffff',
+                fontSize: '8px',
+                fontWeight: 600,
               }}
             >
               led by Sohaib Jehanzeb.
