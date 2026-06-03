@@ -42,7 +42,7 @@ export function Navbar() {
               PathwayItalia
             </span>
             <span
-              className="text-[10px] tracking-[0.2em] uppercase"
+              className="text-[10px] tracking-[0.2em] uppercase text-right"
               style={{
                 fontFamily: '"League Spartan", sans-serif',
                 color: '#ffffff',
