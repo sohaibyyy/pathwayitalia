@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export function Apply() {
-  const [submitted, setSubmitted] = useState(false);
   return (
     <section id="apply" className="relative py-28 lg:py-40 bg-gradient-to-br from-ivory via-[#F8E9C8] to-gold/40 overflow-hidden">
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-blush/30 blur-3xl" />
@@ -20,35 +17,23 @@ export function Apply() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setSubmitted(true);
+            window.location.href = "https://cal.com/pathwayitalia";
           }}
           className="reveal mt-12 bg-ivory/70 backdrop-blur-md border border-border rounded-3xl p-6 sm:p-10 shadow-xl"
         >
-          {submitted ? (
-            <div className="py-12">
-              <div className="text-5xl mb-4">🌅</div>
-              <h3 className="font-display text-3xl text-ocean">Grazie!</h3>
-              <p className="mt-3 text-ocean/70">
-                We've received your details. Your pathway begins soon.
-              </p>
+          <div className="grid sm:grid-cols-2 gap-4 text-left">
+            <Field name="name" label="Full Name" placeholder="Your name" />
+            <Field name="email" type="email" label="Email" placeholder="you@example.com" />
+            <div className="sm:col-span-2">
+              <Field name="nationality" label="Nationality" placeholder="e.g. Pakistani" />
             </div>
-          ) : (
-            <>
-              <div className="grid sm:grid-cols-2 gap-4 text-left">
-                <Field name="name" label="Full Name" placeholder="Your name" />
-                <Field name="email" type="email" label="Email" placeholder="you@example.com" />
-                <div className="sm:col-span-2">
-                  <Field name="nationality" label="Nationality" placeholder="e.g. Pakistani" />
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="mt-8 w-full sm:w-auto rounded-full bg-ocean text-gold px-10 py-4 text-sm font-medium tracking-wide hover:bg-ocean/90 hover:scale-[1.02] transition-all"
-              >
-                Start Your Application →
-              </button>
-            </>
-          )}
+          </div>
+          <button
+            type="submit"
+            className="mt-8 w-full sm:w-auto rounded-full bg-ocean text-gold px-10 py-4 text-sm font-medium tracking-wide hover:bg-ocean/90 hover:scale-[1.02] transition-all"
+          >
+            Start Your Application →
+          </button>
         </form>
       </div>
     </section>
