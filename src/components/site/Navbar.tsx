@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/pathway-italia-logo.png.asset.json";
+
+
 
 const links = [
   { href: "#about", label: "About" },
@@ -28,12 +31,19 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-display text-3xl text-gold tracking-tight">
-            PathwayItalia
-          </span>
-          <span className="text-[10px] italic text-muted-foreground mt-0.5 tracking-wide">
-            led by Sohaib Jehanzeb
+        <a href="#top" className="flex items-center gap-3 leading-none">
+          <img
+            src={logo.url}
+            alt="PathwayItalia — led by Sohaib Jehanzeb"
+            className="h-12 w-12 rounded-full object-cover ring-1 ring-gold/40 shadow-sm"
+          />
+          <span className="hidden sm:flex flex-col">
+            <span className="font-display text-xl text-ocean leading-none">
+              PathwayItalia
+            </span>
+            <span className="mt-1 text-[10px] uppercase tracking-[0.28em] text-gold/90">
+              Italy, Simplified.
+            </span>
           </span>
         </a>
 

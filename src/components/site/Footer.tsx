@@ -4,7 +4,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid md:grid-cols-3 gap-10">
         <div>
           <div className="font-display text-3xl text-gold">PathwayItalia</div>
-          <p className="mt-3 text-sm text-ivory/60 italic">Guiding your path to Italy.</p>
+          <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-gold/80">Italy, Simplified.</p>
+          <p className="mt-4 text-sm text-ivory/60 italic">Guiding your path to Italy.</p>
         </div>
         <div className="flex flex-wrap gap-x-8 gap-y-3 md:justify-center text-sm">
           <a href="#about" className="hover:text-gold transition-colors">About</a>
