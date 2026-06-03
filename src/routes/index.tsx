@@ -1,29 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { WhoWeAre } from "@/components/site/WhoWeAre";
+import { Services } from "@/components/site/Services";
+import { WhyItaly } from "@/components/site/WhyItaly";
+import { Universities } from "@/components/site/Universities";
+import { Apply } from "@/components/site/Apply";
+import { Footer } from "@/components/site/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "PathwayItalia — Your Path to Italy's Finest Universities" },
+      { name: "description", content: "PathwayItalia guides international students through enrolling in Italy's top universities — from application to arrival. Led by Sohaib Jehanzeb." },
+      { property: "og:title", content: "PathwayItalia — Bachelor's Degrees in Italy" },
+      { property: "og:description", content: "Bachelor's degrees at Italy's finest universities — guided from application to arrival." },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-ivory text-ocean overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <WhoWeAre />
+      <Services />
+      <WhyItaly />
+      <Universities />
+      <Apply />
+      <Footer />
+    </main>
   );
 }
