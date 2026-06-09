@@ -20,10 +20,6 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Bachelor's degrees at Italy's finest universities — guided from application to arrival." },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg?v=3" },
-      { rel: "icon", href: "/favicon.ico?v=3" },
-      { rel: "shortcut icon", href: "/favicon.ico?v=3" },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png?v=3" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
