@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#11384a"/>
+  <path d="M12 50h40" stroke="#f2d84f" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#f2d84f">PI</text>
+</svg>
