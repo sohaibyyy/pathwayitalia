@@ -18,7 +18,7 @@ export function Footer() {
             href="mailto:pathwayitalia@gmail.com"
             className="text-sm text-ivory/60 hover:text-gold transition-colors"
           >
-            pathwayitalia@gmail.com
+            info@pathwayitalia.it
           </a>
           <div className="flex gap-3">
             <a
