@@ -33,6 +33,8 @@ import heroLg from "@/assets/photos/hero-lg.webp";
 import heroSm from "@/assets/photos/hero-sm.webp";
 import aboutLg from "@/assets/photos/about-lg.webp";
 import aboutSm from "@/assets/photos/about-sm.webp";
+import marangoniLg from "@/assets/photos/marangoni-lg.webp";
+import marangoniSm from "@/assets/photos/marangoni-sm.webp";
 
 export interface Photo {
   lg: string;
@@ -45,9 +47,10 @@ export interface Photo {
   caption: string;
   author: string;
   license: string;
-  licenseUrl: string;
-  /** Wikimedia Commons file page. */
-  source: string;
+  /** Link to the licence text, if there is one. */
+  licenseUrl?: string;
+  /** Page the photo came from (Wikimedia Commons file page, press kit, etc.), if any. */
+  source?: string;
 }
 
 export const photos = {
@@ -196,6 +199,18 @@ export const photos = {
     license: "CC BY-SA 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     source: "https://commons.wikimedia.org/wiki/File:Florence_Duomo_from_Michelangelo_hill.jpg",
+  },
+  marangoni: {
+    lg: marangoniLg,
+    sm: marangoniSm,
+    width: 1080,
+    height: 1080,
+    alt: "Arcaded inner courtyard of an Istituto Marangoni building in Milan, with an exhibition installed",
+    caption: "Istituto Marangoni, Milan",
+    // TODO(Sohaib): supplied by you. Add the photographer / Marangoni credit here and,
+    // if it came from a press kit, put the press-kit page in `source`.
+    author: "[ADD PHOTO CREDIT]",
+    license: "Used with permission",
   },
   about: {
     lg: aboutLg,

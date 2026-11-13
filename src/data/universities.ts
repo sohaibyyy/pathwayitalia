@@ -744,7 +744,7 @@ export const universities: University[] = [
     catalogueYear: "2027/28",
     intakeNote: "Official pages list intakes in January 2027 and September 2027.",
     lastVerified: VERIFIED_ON,
-    photo: null,
+    photo: "marangoni",
     programs: [
       {
         name: "Fashion Design & Accessories (Womenswear / Menswear)",

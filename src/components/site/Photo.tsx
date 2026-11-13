@@ -53,13 +53,21 @@ export function PhotoCredit({
       className={`text-xs leading-snug ${onDark ? "text-ivory/75" : "text-ink-soft"} ${className}`}
     >
       {photo.caption}. Photo:{" "}
-      <a href={photo.source} target="_blank" rel="noreferrer" className={link}>
-        {photo.author}
-      </a>
+      {photo.source ? (
+        <a href={photo.source} target="_blank" rel="noreferrer" className={link}>
+          {photo.author}
+        </a>
+      ) : (
+        photo.author
+      )}
       ,{" "}
-      <a href={photo.licenseUrl} target="_blank" rel="noreferrer license" className={link}>
-        {photo.license}
-      </a>
+      {photo.licenseUrl ? (
+        <a href={photo.licenseUrl} target="_blank" rel="noreferrer license" className={link}>
+          {photo.license}
+        </a>
+      ) : (
+        photo.license
+      )}
     </figcaption>
   );
 }
