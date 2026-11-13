@@ -62,9 +62,10 @@ function Home() {
           height={hero.height}
           alt={hero.alt}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[72%_center] lg:object-[60%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/45 to-ocean-deep/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-ocean-deep/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ocean-deep/85 via-ocean-deep/45 to-transparent lg:via-ocean-deep/35" />
         <div className="container-page relative z-10 pb-16 pt-36 lg:pb-24">
           <p className="eyebrow eyebrow-on-dark">Bachelor's degrees in Italy</p>
           <h1 className="h-display mt-5 max-w-4xl text-ivory">
