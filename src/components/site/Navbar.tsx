@@ -1,114 +1,123 @@
 import { useEffect, useState } from "react";
-
-
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#why-italy", label: "Why Italy" },
-  { href: "#universities", label: "Universities" },
-  { href: "#programs", label: "Programs" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#apply", label: "Apply Now" },
-];
+import { Link, useRouterState } from "@tanstack/react-router";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { navLinks, site } from "@/data/site";
 
 export function Navbar() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu on navigation and on Escape.
+  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // Only the homepage has a photo behind the header.
+  const overHero = pathname === "/" && !scrolled && !open;
+
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-ivory/85 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        overHero
+          ? "bg-gradient-to-b from-ocean-deep/70 to-transparent"
+          : "border-b border-border bg-ivory/95 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 leading-none">
-          <div className="flex flex-col">
-            <span
-              className="text-xl sm:text-2xl tracking-tight transition-colors duration-300"
-              style={{
-                fontFamily: '"Times New Roman MT", "Times New Roman", Times, serif',
-                color: scrolled ? '#1C3A4A' : '#fdec71',
-              }}
-            >
-              PathwayItalia
-            </span>
-            <span
-              className="tracking-normal text-right -mt-0.5 text-xs transition-colors duration-300"
-              style={{
-                fontFamily: '"League Spartan", sans-serif',
-                color: scrolled ? '#1C3A4A' : '#ffffff',
-                fontSize: '8px',
-                fontWeight: 600,
-              }}
-            >
-              led by Sohaib Jehanzeb.
-            </span>
-          </div>
-          <span className={`hidden md:inline-block pl-3 ml-1 border-l text-[10px] uppercase tracking-[0.28em] transition-colors duration-300 ${scrolled ? 'border-ocean/20 text-ocean' : 'border-white/20 text-gold/90'}`}>
-            Italy, Simplified.
+      <div className="container-page flex h-[4.5rem] items-center justify-between gap-6">
+        <Link to="/" className="flex flex-col leading-none" aria-label={`${site.name} home`}>
+          <span
+            className={`font-display text-[1.6rem] tracking-tight ${overHero ? "text-ivory" : "text-ocean"}`}
+          >
+            Pathway<span className={overHero ? "text-gold" : "text-terracotta"}>Italia</span>
           </span>
-        </a>
+          <span
+            className={`mt-1 text-[0.6875rem] font-medium tracking-[0.08em] ${
+              overHero ? "text-ivory/85" : "text-ink-soft"
+            }`}
+          >
+            led by {site.founder}
+          </span>
+        </Link>
 
-        <nav className="hidden lg:flex items-center gap-9">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-ocean/80 hover:text-gold transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
+        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
+          {navLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className={`relative py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:transition-transform hover:after:scale-x-100 ${
+                overHero ? "text-ivory after:bg-gold" : "text-ocean after:bg-terracotta"
+              }`}
+              activeProps={{ className: "after:scale-x-100", "aria-current": "page" }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#apply"
-          className="hidden md:inline-flex items-center gap-2 rounded-full bg-ocean text-gold px-5 py-2.5 text-sm font-medium hover:bg-ocean/90 transition-all hover:gap-3"
-        >
-          Start Your Journey <span>→</span>
-        </a>
-
-        <button
-          aria-label="Menu"
-          className="lg:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="block h-px w-6 bg-ocean" />
-          <span className="block h-px w-6 bg-ocean" />
-        </button>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/apply"
+            className={`btn btn-sm hidden sm:inline-flex ${overHero ? "btn-accent" : "btn-primary"}`}
+          >
+            Apply now <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+          <button
+            type="button"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden ${
+              overHero ? "text-ivory" : "text-ocean"
+            }`}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="lg:hidden bg-ivory border-t border-border px-6 py-6 flex flex-col gap-4">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-base text-ocean"
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile"
+          className="border-t border-border bg-ivory lg:hidden"
+        >
+          <div className="container-page flex flex-col py-4">
+            <Link
+              to="/"
+              activeOptions={{ exact: true }}
+              className="border-b border-border py-3.5 text-lg text-ocean"
+              activeProps={{ className: "font-semibold text-terracotta", "aria-current": "page" }}
             >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#apply"
-            onClick={() => setOpen(false)}
-            className="rounded-full bg-ocean text-gold px-5 py-3 text-sm font-medium text-center"
-          >
-            Start Your Journey →
-          </a>
-        </div>
+              Home
+            </Link>
+            {navLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="border-b border-border py-3.5 text-lg text-ocean"
+                activeProps={{ className: "font-semibold text-terracotta", "aria-current": "page" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link to="/apply" className="btn btn-primary mt-5">
+              Apply now <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
+        </nav>
       )}
     </header>
   );
