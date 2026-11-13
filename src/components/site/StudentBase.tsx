@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Quote } from "lucide-react";
+import { Globe2, Quote } from "lucide-react";
 import { studentCountries, studentCountryCount, testimonials } from "@/data/student-base";
 import { site } from "@/data/site";
 
@@ -111,6 +111,11 @@ export function StudentBase() {
               <span className="font-medium text-ocean">{c.name}</span>
             </li>
           ))}
+          {/* Shown after the last country so the list doesn't read as complete. */}
+          <li className="flex items-center gap-3 rounded-2xl border border-dashed border-ocean/30 bg-transparent px-4 py-3.5">
+            <Globe2 size={24} className="shrink-0 text-terracotta" aria-hidden="true" />
+            <span className="font-medium italic text-ocean">and many more…</span>
+          </li>
         </ul>
 
         {testimonials.length > 0 ? (
