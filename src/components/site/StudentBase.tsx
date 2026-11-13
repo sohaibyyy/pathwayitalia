@@ -11,8 +11,30 @@ import ae from "flag-icons/flags/4x3/ae.svg";
 import cm from "flag-icons/flags/4x3/cm.svg";
 import id from "flag-icons/flags/4x3/id.svg";
 import ca from "flag-icons/flags/4x3/ca.svg";
+import nz from "flag-icons/flags/4x3/nz.svg";
+import inFlag from "flag-icons/flags/4x3/in.svg"; // "in" is a reserved word in JavaScript
+import pk from "flag-icons/flags/4x3/pk.svg";
+import es from "flag-icons/flags/4x3/es.svg";
+import br from "flag-icons/flags/4x3/br.svg";
+import ar from "flag-icons/flags/4x3/ar.svg";
+import mv from "flag-icons/flags/4x3/mv.svg";
 
-const flags: Record<string, string> = { pt, us, lb, ae, cm, id, ca };
+const flags: Record<string, string> = {
+  pt,
+  us,
+  lb,
+  ae,
+  cm,
+  id,
+  ca,
+  nz,
+  in: inFlag,
+  pk,
+  es,
+  br,
+  ar,
+  mv,
+};
 
 function useCountUp(target: number, durationMs = 1400) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -48,7 +70,6 @@ function useCountUp(target: number, durationMs = 1400) {
 
 export function StudentBase() {
   const { ref, value } = useCountUp(studentCountryCount);
-  const missing = Math.max(0, studentCountryCount - studentCountries.length);
 
   return (
     <section className="section bg-ivory" aria-labelledby="student-base-heading">
@@ -90,11 +111,6 @@ export function StudentBase() {
               <span className="font-medium text-ocean">{c.name}</span>
             </li>
           ))}
-          {site.showPlaceholders && missing > 0 && (
-            <li className="placeholder-box col-span-2 flex items-center px-4 py-3.5 text-sm font-semibold sm:col-span-1 lg:col-span-3">
-              [ADD REMAINING COUNTRIES] — {missing}+ more to add in src/data/student-base.ts
-            </li>
-          )}
         </ul>
 
         {testimonials.length > 0 ? (
@@ -104,7 +120,8 @@ export function StudentBase() {
                 <Quote className="text-terracotta" aria-hidden="true" />
                 <blockquote className="mt-4 font-display text-xl text-ocean">{t.quote}</blockquote>
                 <figcaption className="mt-4 text-sm text-ink-soft">
-                  <strong className="text-ocean">{t.name}</strong> · {t.detail}
+                  <strong className="text-ocean">{t.name}</strong>
+                  {t.detail && <> · {t.detail}</>}
                 </figcaption>
               </figure>
             ))}
