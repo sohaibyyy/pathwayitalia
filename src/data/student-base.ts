@@ -42,5 +42,6 @@ export const testimonials: { quote: string; name: string; detail?: string }[] = 
     quote:
       "They helped me with every step, and the whole thing was really transparent. Applications, enrollments, visa, etc. were all done on time!",
     name: "Sarah Malik",
+    detail: "UAE",
   },
 ];
