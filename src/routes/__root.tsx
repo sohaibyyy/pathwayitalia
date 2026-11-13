@@ -21,6 +21,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import { site } from "@/data/site";
+import { Analytics } from "@vercel/analytics/react";
 
 function NotFoundComponent() {
   return (
@@ -138,6 +139,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (st) => st.location.pathname });
+  // Route pattern (e.g. "/universities/$slug") so analytics can group the university pages.
+  const routePattern = useRouterState({ select: (st) => st.matches.at(-1)?.fullPath ?? null });
   useReveal(pathname);
 
   return (
@@ -154,6 +157,8 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      {/* Vercel Web Analytics: cookieless visitor counts, viewable in the Vercel dashboard. */}
+      <Analytics path={pathname} route={routePattern} />
     </QueryClientProvider>
   );
 }
