@@ -209,9 +209,7 @@ export const photos = {
     height: 1080,
     alt: "Arcaded inner courtyard of an Istituto Marangoni building in Milan, with an exhibition installed",
     caption: "Istituto Marangoni, Milan",
-    // TODO(Sohaib): supplied by you. Add the photographer / Marangoni credit here and,
-    // if it came from a press kit, put the press-kit page in `source`.
-    author: "[ADD PHOTO CREDIT]",
+    author: "Istituto Marangoni",
     license: "Used with permission",
   },
   ied: {
@@ -223,9 +221,7 @@ export const photos = {
     // This image is an architectural rendering (a computer visualisation), not a photograph,
     // so the caption says so.
     caption: "IED, architectural rendering",
-    // TODO(Sohaib): supplied by you. Add the architect / IED credit here and,
-    // if it came from a press kit, put the press-kit page in `source`.
-    author: "[ADD PHOTO CREDIT]",
+    author: "IED Istituto Europeo di Design",
     license: "Used with permission",
   },
   about: {
