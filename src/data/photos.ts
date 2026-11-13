@@ -35,6 +35,8 @@ import aboutLg from "@/assets/photos/about-lg.webp";
 import aboutSm from "@/assets/photos/about-sm.webp";
 import marangoniLg from "@/assets/photos/marangoni-lg.webp";
 import marangoniSm from "@/assets/photos/marangoni-sm.webp";
+import iedLg from "@/assets/photos/ied-lg.webp";
+import iedSm from "@/assets/photos/ied-sm.webp";
 
 export interface Photo {
   lg: string;
@@ -208,6 +210,20 @@ export const photos = {
     alt: "Arcaded inner courtyard of an Istituto Marangoni building in Milan, with an exhibition installed",
     caption: "Istituto Marangoni, Milan",
     // TODO(Sohaib): supplied by you. Add the photographer / Marangoni credit here and,
+    // if it came from a press kit, put the press-kit page in `source`.
+    author: "[ADD PHOTO CREDIT]",
+    license: "Used with permission",
+  },
+  ied: {
+    lg: iedLg,
+    sm: iedSm,
+    width: 1000,
+    height: 770,
+    alt: "Architectural rendering of a large brick building with arched glass windows, shown at dusk with people outside",
+    // This image is an architectural rendering (a computer visualisation), not a photograph,
+    // so the caption says so.
+    caption: "IED, architectural rendering",
+    // TODO(Sohaib): supplied by you. Add the architect / IED credit here and,
     // if it came from a press kit, put the press-kit page in `source`.
     author: "[ADD PHOTO CREDIT]",
     license: "Used with permission",

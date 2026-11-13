@@ -851,7 +851,7 @@ export const universities: University[] = [
     intakeNote:
       "Official course pages list start dates in October 2027 (some also January 2027 or January 2028). Only campuses where the page lists English are shown.",
     lastVerified: VERIFIED_ON,
-    photo: null,
+    photo: "ied",
     programs: [
       {
         name: "Fashion Design",

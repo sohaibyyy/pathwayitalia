@@ -25,7 +25,7 @@ The site is server-rendered by TanStack Start on Vercel. Every URL, including de
 2. **Booking link.** Confirm `https://cal.com/pathwayitalia` is live (set in `src/data/site.ts`).
 3. **Student Base.** Add the remaining countries in `src/data/student-base.ts`, and the matching flag import in `src/components/site/StudentBase.tsx`.
 4. **Testimonials.** Add real quotes, used with permission, in `src/data/student-base.ts`. Nothing on the site is invented.
-5. **Photos.** IED still has no photo (nothing properly licensed on Wikimedia Commons; ask their press office). The Istituto Marangoni photo was supplied by you: add its credit in `src/data/photos.ts` (it currently reads "[ADD PHOTO CREDIT]") and keep proof of permission.
+5. **Photo credits.** The Istituto Marangoni photo and the IED rendering were supplied by you. Add their credits in `src/data/photos.ts` (both currently read "[ADD PHOTO CREDIT]") and keep proof of permission. The IED image is an architectural rendering and is captioned as one.
 6. **Services copy.** The detailed "What's included" lists are a first draft; check they match what you offer.
 7. When everything is filled in, set `showPlaceholders: false` in `src/data/site.ts`.
 

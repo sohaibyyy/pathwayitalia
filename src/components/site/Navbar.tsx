@@ -36,18 +36,40 @@ export function Navbar() {
       }`}
     >
       <div className="container-page flex h-[4.5rem] items-center justify-between gap-6">
-        <Link to="/" className="flex flex-col leading-none" aria-label={`${site.name} home`}>
-          <span
-            className={`font-display text-[1.6rem] tracking-tight ${overHero ? "text-ivory" : "text-ocean"}`}
-          >
-            Pathway<span className={overHero ? "text-gold" : "text-terracotta"}>Italia</span>
+        {/* Original PathwayItalia logo, kept exactly as on the previous site. */}
+        <Link
+          to="/"
+          className="flex items-center gap-3 leading-none"
+          aria-label={`${site.name}, led by ${site.founder}: home`}
+        >
+          <span className="flex flex-col">
+            <span
+              className="text-xl tracking-tight transition-colors duration-300 sm:text-2xl"
+              style={{
+                fontFamily: '"Times New Roman MT", "Times New Roman", Times, serif',
+                color: overHero ? "#fdec71" : "#1C3A4A",
+              }}
+            >
+              PathwayItalia
+            </span>
+            <span
+              className="-mt-0.5 text-right tracking-normal transition-colors duration-300"
+              style={{
+                fontFamily: '"League Spartan", sans-serif',
+                color: overHero ? "#ffffff" : "#1C3A4A",
+                fontSize: "8px",
+                fontWeight: 600,
+              }}
+            >
+              led by {site.founder}.
+            </span>
           </span>
           <span
-            className={`mt-1 text-[0.6875rem] font-medium tracking-[0.08em] ${
-              overHero ? "text-ivory/85" : "text-ink-soft"
+            className={`ml-1 hidden border-l pl-3 text-[10px] uppercase tracking-[0.28em] transition-colors duration-300 md:inline-block ${
+              overHero ? "border-white/20 text-gold/90" : "border-ocean/20 text-ocean"
             }`}
           >
-            led by {site.founder}
+            {site.tagline}
           </span>
         </Link>
 

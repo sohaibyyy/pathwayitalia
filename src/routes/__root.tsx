@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import "@fontsource-variable/fraunces/wght.css";
 import "@fontsource-variable/fraunces/wght-italic.css";
 import "@fontsource-variable/dm-sans/wght.css";
+import "@fontsource/league-spartan/600.css"; // used by the original logo
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
