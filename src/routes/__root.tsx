@@ -10,10 +10,9 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import "@fontsource-variable/fraunces/wght.css";
-import "@fontsource-variable/fraunces/wght-italic.css";
+import "@fontsource-variable/playfair-display/wght.css";
+import "@fontsource-variable/playfair-display/wght-italic.css";
 import "@fontsource-variable/dm-sans/wght.css";
-import "@fontsource/league-spartan/600.css"; // used by the original logo
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -95,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "PathwayItalia helps international students get into English-taught bachelor's programmes at Italian universities, from choosing a course to arriving in Italy.",
       },
       { name: "author", content: site.name },
-      { name: "theme-color", content: "#1c3a4a" },
+      { name: "theme-color", content: "#2f4f5a" },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_GB" },

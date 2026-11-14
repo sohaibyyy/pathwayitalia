@@ -10,6 +10,8 @@ export const site = {
   email: "info@pathwayitalia.it",
   instagram: "https://instagram.com/pathwayitalia",
   tiktok: "https://tiktok.com/@pathwayitalia",
+  /** WhatsApp number in international format, digits only (used for the wa.me link). */
+  whatsapp: "393894473103",
 
   /**
    * Meeting booking link.
