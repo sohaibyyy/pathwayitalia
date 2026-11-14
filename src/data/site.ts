@@ -30,11 +30,11 @@ export const site = {
 
   /**
    * Founder note shown on the homepage.
-   * TODO(Sohaib): write a few sentences in your own words about making the
-   * move to Italy yourself. Leave empty to show the placeholder (or to hide
-   * the section when showPlaceholders is false).
+   * Supplied by Sohaib. Leave empty to show the placeholder (or to hide the
+   * section when showPlaceholders is false).
    */
-  founderNote: "",
+  founderNote:
+    "From Dubai to Italy on my own, I learned every step the hard way, so our students don’t have to.",
 
   /**
    * Shows the dashed "placeholder" boxes (remaining countries, testimonials,
