@@ -18,10 +18,7 @@ export const Route = createFileRoute("/apply")({
 });
 
 type Status =
-  | { kind: "idle" }
-  | { kind: "sending" }
-  | { kind: "sent" }
-  | { kind: "error"; message: string };
+  { kind: "idle" } | { kind: "sending" } | { kind: "sent" } | { kind: "error"; message: string };
 
 function ApplyPage() {
   const [status, setStatus] = useState<Status>({ kind: "idle" });

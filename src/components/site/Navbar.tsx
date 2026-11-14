@@ -32,34 +32,28 @@ export function Navbar() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         overHero
           ? "bg-gradient-to-b from-ocean-deep/70 to-transparent"
-          : "border-b border-border bg-ivory/95 backdrop-blur-md"
+          : "border-b border-border bg-ivory"
       }`}
     >
       <div className="container-page flex h-[4.5rem] items-center justify-between gap-6">
         {/* Original PathwayItalia logo, kept exactly as on the previous site. */}
         <Link
           to="/"
-          className="flex items-center gap-3 leading-none"
+          className="flex min-h-11 items-center gap-3 leading-none"
           aria-label={`${site.name}, led by ${site.founder}: home`}
         >
           <span className="flex flex-col">
             <span
-              className="text-xl tracking-tight transition-colors duration-300 sm:text-2xl"
-              style={{
-                fontFamily: '"Times New Roman MT", "Times New Roman", Times, serif',
-                color: overHero ? "#fdec71" : "#1C3A4A",
-              }}
+              className={`font-display text-2xl tracking-tight transition-colors duration-300 ${
+                overHero ? "text-gold" : "text-ocean"
+              }`}
             >
               PathwayItalia
             </span>
             <span
-              className="-mt-0.5 text-right tracking-normal transition-colors duration-300"
-              style={{
-                fontFamily: '"League Spartan", sans-serif',
-                color: overHero ? "#ffffff" : "#1C3A4A",
-                fontSize: "8px",
-                fontWeight: 600,
-              }}
+              className={`mt-0.5 text-right text-[0.6875rem] font-semibold tracking-normal transition-colors duration-300 ${
+                overHero ? "text-white" : "text-ocean"
+              }`}
             >
               led by {site.founder}.
             </span>
@@ -78,7 +72,7 @@ export function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`relative py-2 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:transition-transform hover:after:scale-x-100 ${
+              className={`relative py-3 text-[0.9375rem] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:transition-transform hover:after:scale-x-100 ${
                 overHero ? "text-ivory after:bg-gold" : "text-ocean after:bg-terracotta"
               }`}
               activeProps={{ className: "after:scale-x-100", "aria-current": "page" }}

@@ -36,7 +36,7 @@ export function ProgramCard({
         <Link
           to="/universities/$slug"
           params={{ slug: p.university.slug }}
-          className="text-sm font-semibold text-terracotta hover:underline"
+          className="-my-3 inline-block self-start py-3 text-sm font-semibold text-terracotta hover:underline"
         >
           {p.university.name}
         </Link>

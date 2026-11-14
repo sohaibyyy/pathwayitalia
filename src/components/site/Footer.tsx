@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { navLinks, site } from "@/data/site";
 
 function TikTokIcon() {
@@ -62,9 +62,17 @@ export function Footer() {
           </h2>
           <a
             href={`mailto:${site.email}`}
-            className={`mt-4 inline-flex items-center gap-2 text-[0.9375rem] ${linkClass}`}
+            className={`mt-4 flex min-h-11 items-center gap-2 text-[0.9375rem] ${linkClass}`}
           >
             <Mail size={18} aria-hidden="true" /> {site.email}
+          </a>
+          <a
+            href={`https://wa.me/${site.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
+            className={`mt-1 flex min-h-11 items-center gap-2 text-[0.9375rem] ${linkClass}`}
+          >
+            <MessageCircle size={18} aria-hidden="true" /> WhatsApp: +39 389 447 3103
           </a>
           <div className="mt-5 flex gap-3">
             <a

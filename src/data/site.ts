@@ -10,6 +10,8 @@ export const site = {
   email: "info@pathwayitalia.it",
   instagram: "https://instagram.com/pathwayitalia",
   tiktok: "https://tiktok.com/@pathwayitalia",
+  /** WhatsApp number in international format, digits only (used for the wa.me link). */
+  whatsapp: "393894473103",
 
   /**
    * Meeting booking link.
@@ -25,6 +27,14 @@ export const site = {
    * back to opening the visitor's email app with their answers pre-filled.
    */
   web3formsKey: (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ?? "",
+
+  /**
+   * Founder note shown on the homepage.
+   * TODO(Sohaib): write a few sentences in your own words about making the
+   * move to Italy yourself. Leave empty to show the placeholder (or to hide
+   * the section when showPlaceholders is false).
+   */
+  founderNote: "",
 
   /**
    * Shows the dashed "placeholder" boxes (remaining countries, testimonials,

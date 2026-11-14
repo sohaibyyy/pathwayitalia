@@ -18,17 +18,12 @@ export function CtaBand({
           <p className="mt-4 text-lg text-ivory/85">{text}</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link to="/apply" className="btn btn-accent">
+          <a href={site.bookingUrl} target="_blank" rel="noreferrer" className="btn btn-accent">
+            <CalendarDays size={18} aria-hidden="true" /> Book a free consultation
+          </a>
+          <Link to="/apply" className="btn btn-outline-light">
             Start your application <ArrowRight size={18} aria-hidden="true" />
           </Link>
-          <a
-            href={site.bookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-outline-light"
-          >
-            <CalendarDays size={18} aria-hidden="true" /> Book a free call
-          </a>
         </div>
       </div>
     </section>

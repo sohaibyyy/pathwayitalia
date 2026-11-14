@@ -31,7 +31,11 @@ function ServicesPage() {
       >
         <nav aria-label="Services on this page" className="mt-8 flex flex-wrap gap-2">
           {services.map((s, i) => (
-            <a key={s.slug} href={`#${s.slug}`} className="chip hover:bg-ocean hover:text-ivory">
+            <a
+              key={s.slug}
+              href={`#${s.slug}`}
+              className="chip min-h-11 px-4 hover:bg-ocean hover:text-ivory"
+            >
               {i + 1}. {s.title}
             </a>
           ))}
