@@ -67,7 +67,7 @@ function ProgramsPage() {
                     type="button"
                     onClick={() => setCategory(c)}
                     aria-pressed={category === c}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`min-h-11 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                       category === c
                         ? "border-ocean bg-ocean text-ivory"
                         : "border-input bg-transparent text-ocean hover:border-ocean"

@@ -29,6 +29,14 @@ export const site = {
   web3formsKey: (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ?? "",
 
   /**
+   * Founder note shown on the homepage.
+   * TODO(Sohaib): write a few sentences in your own words about making the
+   * move to Italy yourself. Leave empty to show the placeholder (or to hide
+   * the section when showPlaceholders is false).
+   */
+  founderNote: "",
+
+  /**
    * Shows the dashed "placeholder" boxes (remaining countries, testimonials,
    * missing university photos). Set to false to hide them on the live site.
    */

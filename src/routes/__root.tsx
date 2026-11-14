@@ -21,6 +21,7 @@ import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 import { site } from "@/data/site";
 import { Analytics } from "@vercel/analytics/react";
+import { MessageCircle } from "lucide-react";
 
 function NotFoundComponent() {
   return (
@@ -157,6 +158,16 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      {/* Sticky WhatsApp contact button, mobile and tablet only. */}
+      <a
+        href={`https://wa.me/${site.whatsapp}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat with PathwayItalia on WhatsApp"
+        className="fixed bottom-4 right-4 z-40 inline-flex h-14 items-center gap-2 rounded-lg bg-ocean px-4 font-semibold text-ivory shadow-xl lg:hidden"
+      >
+        <MessageCircle size={22} strokeWidth={1.5} aria-hidden="true" /> WhatsApp
+      </a>
       {/* Vercel Web Analytics: cookieless visitor counts, viewable in the Vercel dashboard. */}
       <Analytics path={pathname} route={routePattern} />
     </QueryClientProvider>
