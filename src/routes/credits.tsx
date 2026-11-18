@@ -3,6 +3,7 @@ import { pageHead } from "@/lib/seo";
 import { photos, type Photo } from "@/data/photos";
 import { universities } from "@/data/universities";
 import { site } from "@/data/site";
+import { heroVideo } from "@/data/video";
 import { PageHeader } from "@/components/site/PageHeader";
 
 export const Route = createFileRoute("/credits")({
@@ -26,7 +27,55 @@ function CreditsPage() {
       />
       <section className="section pt-10 lg:pt-14">
         <div className="container-page">
-          <ul className="grid gap-5 md:grid-cols-2">
+          <h2 className="font-display text-2xl">Video</h2>
+          <div className="card mt-4 flex gap-4 p-4 md:max-w-[calc(50%-0.625rem)]">
+            <img
+              src={heroVideo.poster.sm}
+              alt=""
+              width={120}
+              height={68}
+              loading="lazy"
+              className="h-20 w-28 shrink-0 rounded-lg object-cover"
+            />
+            <div className="text-sm">
+              <p className="font-semibold text-ocean">
+                {heroVideo.credit.title} (homepage background video)
+              </p>
+              <p className="mt-1 text-ink-soft">
+                By{" "}
+                <a
+                  href={heroVideo.credit.creatorUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-inline"
+                >
+                  {heroVideo.credit.creator}
+                </a>{" "}
+                via{" "}
+                <a
+                  href={heroVideo.credit.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-inline"
+                >
+                  {heroVideo.credit.source}
+                </a>{" "}
+                ·{" "}
+                <a
+                  href={heroVideo.credit.licenseUrl}
+                  target="_blank"
+                  rel="noreferrer license"
+                  className="link-inline"
+                >
+                  {heroVideo.credit.license}
+                </a>
+                . Trimmed to a loop, audio removed and re-encoded.
+              </p>
+            </div>
+          </div>
+
+          <h2 className="mt-12 font-display text-2xl">Photographs</h2>
+          <ul className="mt-4 grid gap-5 md:grid-cols-2">
             {Object.entries(photos as Record<string, Photo>).map(([key, p]) => (
               <li key={key} className="card flex gap-4 p-4">
                 <img
