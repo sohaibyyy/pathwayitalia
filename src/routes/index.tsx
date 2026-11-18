@@ -12,6 +12,8 @@ import { SectionHeading } from "@/components/site/PageHeader";
 import { StudentBase } from "@/components/site/StudentBase";
 import { UniversityCard } from "@/components/site/UniversityCard";
 import { CtaBand } from "@/components/site/CtaBand";
+import { HeroVideo, HeroVideoCredit } from "@/components/site/HeroVideo";
+import { heroVideo } from "@/data/video";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -80,18 +82,22 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[92svh] items-end overflow-hidden bg-ocean-deep">
-        <img
-          src={hero.lg}
-          srcSet={`${hero.sm} 960w, ${hero.lg} 1920w`}
-          sizes="100vw"
-          width={hero.width}
-          height={hero.height}
-          alt={hero.alt}
-          fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover object-[72%_center] lg:object-[60%_center]"
-        />
-        {/* A single scrim so the headline stays legible over the photo. */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(34_58_67/0.92),rgb(34_58_67/0.55)_45%,rgb(34_58_67/0.35))]" />
+        {heroVideo.enabled ? (
+          <HeroVideo />
+        ) : (
+          <img
+            src={hero.lg}
+            srcSet={`${hero.sm} 960w, ${hero.lg} 1920w`}
+            sizes="100vw"
+            width={hero.width}
+            height={hero.height}
+            alt={hero.alt}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[72%_center] lg:object-[60%_center]"
+          />
+        )}
+        {/* A single scrim so the headline stays legible over the video or photo. */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(34_58_67/0.9),rgb(34_58_67/0.55)_50%,rgb(34_58_67/0.15))]" />
         <div className="container-page relative z-10 pb-16 pt-36 lg:pb-24">
           <p className="eyebrow eyebrow-on-dark">{site.tagline}</p>
           <h1 className="h-display mt-4 max-w-3xl text-ivory">
@@ -108,9 +114,16 @@ function Home() {
               How it works
             </a>
           </div>
-          <PhotoCredit photo={hero} onDark className="mt-12 max-w-md" />
+          {!heroVideo.enabled && <PhotoCredit photo={hero} onDark className="mt-12 max-w-md" />}
         </div>
       </section>
+
+      {heroVideo.enabled && (
+        <div className="container-page flex pt-2 max-sm:pr-44 sm:justify-end">
+          {/* Left-aligned on phones so the floating WhatsApp button does not cover it. */}
+          <HeroVideoCredit />
+        </div>
+      )}
 
       {/* About */}
       <section className="section">
